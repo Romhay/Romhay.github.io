@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Romhay Yemane | Developer & Innovator</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romhay Yemane | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <button id="theme-toggle" aria-label="Toggle dark mode">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-      </svg>
-    </button>
-    
-    <header>
+  <header>
+    <div class="container">
       <h1>Romhay Yemane</h1>
-      <p class="tagline">Turning ideas into clean, functional code.</p>
-    </header>
-    
-    <main>
-      <img 
-        src="https://avatars.githubusercontent.com/u/YOUR_GITHUB_USER_ID?v=4" 
-        alt="Romhay Yemane" 
-        class="profile-pic"
-      >
-      
+      <p>Computer Science Graduate | Developer | Tech Enthusiast</p>
       <div class="links">
-        <a href="https://linkedin.com/in/romhay-yemane-51b00114a" target="_blank" class="btn">
-          LinkedIn
-        </a>
-        <a href="https://github.com/Romhay" target="_blank" class="btn">
-          GitHub
-        </a>
-        <a href="mailto:romhayyzbello@gmail.com" class="btn">
-          Email Me
-        </a>
+        <a href="mailto:romhayyzbello@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/romhay-yemane-51b00114a" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Romhay" target="_blank">GitHub</a>
       </div>
-    </main>
-  </div>
+    </div>
+  </header>
+
+  <section class="about container">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate computer science graduate with experience in front-end development, user interface design, and GitHub-based collaboration. I enjoy turning complex problems into elegant solutions using modern technologies.
+    </p>
+  </section>
+
+  <section class="projects container">
+    <h2>GitHub Projects</h2>
+    <ul id="repo-list">
+      <li>Loading repositories...</li>
+    </ul>
+  </section>
+
+  <section class="skills container">
+    <h2>Skills</h2>
+    <ul class="skill-list">
+      <li>JavaScript</li>
+      <li>HTML & CSS</li>
+      <li>Git & GitHub</li>
+      <li>UI/UX Design</li>
+      <li>Python</li>
+      <li>React (basic)</li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Romhay Yemane</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
