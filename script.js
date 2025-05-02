@@ -1,28 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const themeToggle = document.getElementById('theme-toggle');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  
-  // Initialize theme
-  let currentTheme = localStorage.getItem('theme');
-  if (!currentTheme) {
-    currentTheme = prefersDark.matches ? 'dark' : 'light';
-  }
-  document.body.setAttribute('data-theme', currentTheme);
-  
-  // Toggle theme
-  themeToggle.addEventListener('click', () => {
-    const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    
-    // Dispatch event for analytics (optional)
-    document.dispatchEvent(new CustomEvent('themeChanged', { detail: newTheme }));
+const username = "Romhay";
+const userId = 31938529;
+const repoList = document.getElementById("repo-list");
+
+fetch(`https://api.github.com/user/${userId}/repos`)
+  .then((response) => response.json())
+  .then((repos) => {
+    repoList.innerHTML = "";
+    repos.forEach((repo) => {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = repo.html_url;
+      link.target = "_blank";
+      link.textContent = repo.name;
+      li.appendChild(link);
+      repoList.appendChild(li);
+    });
+  })
+  .catch((error) => {
+    console.error("Error fetching repositories:", error);
+    repoList.innerHTML = "<li>Unable to load projects at this time.</li>";
   });
-  
-  // Watch for system theme changes
-  prefersDark.addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-      document.body.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-    }
-  });
-});
